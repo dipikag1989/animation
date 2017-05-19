@@ -1,0 +1,38 @@
+<ion-header >
+  <ion-navbar color="secondary">
+    <ion-title>
+      Reddits
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+	<ion-list>
+		<ion-item>
+			<ion-label fixed>Categary</ion-label>
+			<ion-select (ionChange)="changeCat()" [(ngModel)]="categary" name="categary">
+				<ion-option value='sports'>Sports</ion-option>
+				<ion-option value='food'>Food</ion-option>
+				<ion-option value='news'>News</ion-option>
+				<ion-option value='music'>Music</ion-option>
+				
+			</ion-select>
+		</ion-item>
+	</ion-list>
+	<ion-list>
+		<ion-item *ngFor=" let item of items">
+		<ion-thumbnail *ngIf="item.data.thumbnail" item-left>
+			<img src="{{item.data.thumbnail}}" (click)="toggal()">
+		</ion-thumbnail>
+			<h2 style="opacity: 0.6" [@myvisibility]='visibleState'>{{item.data.title}}</h2>
+			<p>
+				<ion-icon name="md-thumbs-up">{{item.data.score}}</ion-icon>&nbsp;&nbsp;
+				<ion-icon name="md-chatboxes">{{item.data.num_comments}}</ion-icon>
+			</p>
+			<button ion-button clear item-right (click)="view(item.data)">View</button>
+		</ion-item>
+	</ion-list>
+	<!-- <div animates #animations="animates" text-center>
+		<button ion-button clear item-right (click)="clickMe()">Click me</button>
+	</div>  -->
+</ion-content>

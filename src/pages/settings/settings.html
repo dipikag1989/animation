@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar color="secondary">
+    <ion-title>
+      Settings
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+	<form (submit)="setDefults()">
+	<ion-list>
+		<ion-item>
+			<ion-label fixed>Categary</ion-label>
+			<ion-select  [(ngModel)]="categary" name="categary">
+				<ion-option value='sports'>Sports</ion-option>
+				<ion-option value='food'>Food</ion-option>
+				<ion-option value='news'>News</ion-option>
+				<ion-option value='music'>Music</ion-option>
+				
+			</ion-select>
+		</ion-item>
+	</ion-list>
+
+	<ion-list>
+		<ion-item>
+			<ion-label fixed>limit</ion-label>
+			<ion-select  [(ngModel)]="limit" name="limit">
+				<ion-option value='5'>5</ion-option>
+				<ion-option value='10'>10</ion-option>
+				<ion-option value='15'>15</ion-option>
+				<ion-option value='20'>20</ion-option>
+				
+			</ion-select>
+		</ion-item>
+	</ion-list>
+	<button ion-button block color="secondary">Save changes</button>
+	</form> 
+</ion-content>
