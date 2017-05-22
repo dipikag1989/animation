@@ -54,11 +54,12 @@ export class RedditsPage {
   	this.navCtrl.push(DeatilsPage,{
   		item:item
   	});
+    
   }
   changeCat(){
   	this.getPosts(this.categary,this.limit);
   }
-  toggal(){
+  toggle(){
     this.visibleState =(this.visibleState == 'visible') ? 'invisible' : 'visible'
   }
 
